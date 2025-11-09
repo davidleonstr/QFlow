@@ -6,7 +6,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         "setuptools",
-        "QtPy"
+        "QtPy",
+        "git+https://github.com/davidleonstr/rpack.git@080667c3f9494afdb0c26c79fbb773422a1dc111"
     ],
     description="Python microframework designed to simplify the management of PyQt/PySide applications.",
     long_description=open('README.md').read(),
