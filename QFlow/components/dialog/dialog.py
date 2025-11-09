@@ -8,9 +8,10 @@ A decorator is used to apply styles from an external file.
 
 from qtpy.QtWidgets import QVBoxLayout, QFrame, QHBoxLayout, QWidget
 from .properties import STYLE_PATH, STYLE_THEME_COLOR
+from ...core import RESOURCE_PACKAGE
 from ...modules.style import style
 
-@style(STYLE_PATH, True)
+@style(RESOURCE_PACKAGE.get(STYLE_PATH).decode())
 class Dialog(QFrame):
     """
     Represents a floating dialog window.

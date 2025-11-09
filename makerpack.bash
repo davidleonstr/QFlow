@@ -1,0 +1,1 @@
+python -m rpack create -f "QFlow/components/dialog/dialog.css QFlow/components/notify/notify.css QFlow/components/notify/icons/check.png QFlow/components/notify/icons/close.png QFlow/components/notify/icons/information.png" -o qflow.rpack

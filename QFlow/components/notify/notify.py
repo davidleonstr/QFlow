@@ -10,13 +10,15 @@ from qtpy.QtGui import QPixmap
 from qtpy.QtCore import QTimer, Qt
 from typing import List, Dict
 
+from ...core import RESOURCE_PACKAGE
+
 # Decorator for applying styles to PyQt5 widgets
 from ...modules.style import *
 
 # Importing style properties and configuration
 from .properties import STYLE_BAR, STYLE_PATH, STYLE_THEME_COLOR, ICONS
 
-@style(STYLE_PATH, True)
+@style(RESOURCE_PACKAGE.get(STYLE_PATH).decode())
 class Notify(QWidget):
     """
     Represents an on-screen notification within a parent window.

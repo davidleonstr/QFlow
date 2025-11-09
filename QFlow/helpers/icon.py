@@ -20,7 +20,7 @@ class Icon(QPixmap):
     Otherwise, it initializes an empty QPixmap.
     """
 
-    def __init__(self, path: str, w: int, h: int):
+    def __init__(self, path: str = '', w: int = 24, h: int = 24, imgBytes: bytes = None):
         """
         Initializes an Icon object.
 
@@ -28,7 +28,14 @@ class Icon(QPixmap):
             path (str): The file path of the image.
             w (int): The desired width of the icon.
             h (int): The desired height of the icon.
+            imgBytes (bytes): Image bytes.
         """
+        if imgBytes:
+            pixmap = QPixmap()
+            pixmap.loadFromData(imgBytes)
+            super().__init__(pixmap.scaled(w, h, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+            return
+
         if os.path.exists(path):
             pixmap = QPixmap(path).scaled(w, h, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
             super().__init__(pixmap)

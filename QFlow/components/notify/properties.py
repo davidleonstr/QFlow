@@ -4,20 +4,29 @@ This file contains the constants and properties for the Notify object in this mo
 Modifying any property in this file requires making the same changes in related files.
 """
 
-from ...utils import Source
+from ...core import RESOURCE_PACKAGE
 
 # Class for creating Pixmap icons
 from ...helpers.icon import Icon
 
 # Location of the file with the styles for the Notify object
-STYLE_PATH = Source('components/notify/notify.css').get()
+STYLE_PATH = 'QFlow/components/notify/notify.css'
 """Path to the file containing the styles for the Notify object."""
 
 # References to create the default icons of the Notify class
 ICONS = {
-    'success': lambda: Icon(Source('components/notify/icons/check.png').get(), 25, 25),
-    'error': lambda: Icon(Source('components/notify/icons/close.png').get(), 25, 25),
-    'info': lambda: Icon(Source('components/notify/icons/information.png').get(), 25, 25),
+    'success': lambda: Icon(
+        imgBytes=RESOURCE_PACKAGE.get('QFlow/components/notify/icons/check.png'), 
+        w=25, h=25
+    ),
+    'error': lambda: Icon(
+        imgBytes=RESOURCE_PACKAGE.get('QFlow/components/notify/icons/close.png'), 
+        w=25, h=25
+    ),
+    'info': lambda: Icon(
+        imgBytes=RESOURCE_PACKAGE.get('QFlow/components/notify/icons/information.png'), 
+        w=25, h=25
+    ),
 }
 """
 Dictionary mapping notification types to their default icons.

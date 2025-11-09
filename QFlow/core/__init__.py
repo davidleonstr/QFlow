@@ -1,5 +1,4 @@
-import sys
+from .package import RESOURCE_PACKAGE_PATH, RESOURCE_PACKAGE
+from .flags import FROZEN_LIB
 
-FROZEN_LIB = getattr(sys, 'frozen', False)
-
-__all__ = ['FROZEN_LIB']
+__all__ = ['FROZEN_LIB', 'RESOURCE_PACKAGE_PATH', 'RESOURCE_PACKAGE']
