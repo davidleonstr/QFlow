@@ -24,22 +24,22 @@ class Source:
                 Examples: "QFlow/resources/icon.png", "config/settings.yaml"
         """
         self.frozen = frozen
-        self.input_path = Path(path)
+        self.inputPath = Path(path)
         
         # Check if it's an absolute path
-        if self.input_path.is_absolute():
-            self.resolvedPath = str(self.input_path)
+        if self.inputPath.is_absolute():
+            self.resolvedPath = str(self.inputPath)
         else:
             # Always resolve from project root
             if self.frozen:
                 # In frozen mode, project root is sys._MEIPASS
-                project_root = Path(sys._MEIPASS)
+                projectRoot = Path(sys._MEIPASS)
             else:
                 # In dev mode, go up from QFlow package to project root
-                package_path = Path(res.files(QFlow))
-                project_root = package_path.parent
+                packagePath = Path(res.files(QFlow))
+                projectRoot = packagePath.parent
             
-            self.resolvedPath = str(project_root / self.input_path)
+            self.resolvedPath = str(projectRoot / self.inputPath)
 
     def get(self) -> str:
         """
