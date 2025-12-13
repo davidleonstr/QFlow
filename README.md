@@ -5,6 +5,7 @@
   
   <h3>A modern Python microframework for PyQt/PySide applications</h3>
   
+  [![Docs](https://img.shields.io/badge/docs-online-brightgreen)](https://davidleonstr.github.io/QFlow/)
   [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
   [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
@@ -17,6 +18,10 @@
 # QFlow
 
 **QFlow** is a Python microframework for building modern PyQt/PySide applications with a focus on simplicity and maintainability. It provides a comprehensive set of decorators and utilities that streamline the development of desktop interfaces by abstracting away common patterns and boilerplate code.
+
+## About the brach
+
+The `rpackservice` branch can be packaged into a single file more easily due to the `qflow.rpack` resource which contains all the resources used by the library.
 
 ## Installation
 
